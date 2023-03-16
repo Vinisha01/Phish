@@ -1,6 +1,6 @@
+import Utils.TestUtil;
 import base.Base;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageObject.BulkScanPage;
 import pageObject.DashboardPage;
@@ -25,10 +25,10 @@ public class Test extends Base {
         dashboardPage= new DashboardPage();
         bulkScanPage = new BulkScanPage();
     }
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown(){
+//        driver.quit();
+//    }
 
     @org.testng.annotations.Test(priority = 1)
     public void verifyLogo(){
@@ -49,7 +49,12 @@ public class Test extends Base {
     public void enterURLS() throws IOException, AWTException {
         goTOBulkScan();
      Assert.assertTrue(bulkScanPage.scanTextPresent());
-     bulkScanPage.enterURLData();
+     bulkScanPage.readExcel();
+     bulkScanPage.clickListView();
+    }
+    @org.testng.annotations.Test(priority = 5)
+    public void checkrows() throws IOException {
+
     }
 }
 
