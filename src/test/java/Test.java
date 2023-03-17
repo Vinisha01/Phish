@@ -8,6 +8,7 @@ import pageObject.LandingPage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Test extends Base {
 
@@ -46,14 +47,16 @@ public class Test extends Base {
 
     }
     @org.testng.annotations.Test(priority = 4)
-    public void enterURLS() throws IOException, AWTException {
+    public void enterURLS() throws IOException, AWTException, InterruptedException {
         goTOBulkScan();
      Assert.assertTrue(bulkScanPage.scanTextPresent());
      bulkScanPage.readExcel();
      bulkScanPage.clickListView();
+     bulkScanPage.listOfUrls();
     }
     @org.testng.annotations.Test(priority = 5)
-    public void checkrows() throws IOException {
+    public void checkrows() throws IOException, InterruptedException {
+
 
     }
 }

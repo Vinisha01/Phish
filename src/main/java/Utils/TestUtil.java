@@ -21,13 +21,10 @@ public class TestUtil {
         WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(s));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
-
-    public static void actionKeyboard(WebDriver driver){
-        Actions act= new Actions(driver);
-        act.sendKeys(Keys.ENTER);
-
-    }
+  public static void keyboardEnter(){
+      Actions act= new Actions(driver);
+      act.sendKeys(Keys.ENTER).perform();
+  }
 }
 
 
